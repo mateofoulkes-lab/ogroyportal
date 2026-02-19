@@ -1,0 +1,118 @@
+tabla,id,nombre,tipo,a,b,result,item,outcome,outcome_id,estado_ogro,flags_set,condiciones,texto
+items,pescado,Pescado,base,,,,,,,,,,
+items,agua,Agua,base,,,,,,,,,,
+items,fuego,Fuego,base,,,,,,,,,,
+items,palo,Palo,base,,,,,,,,,,
+items,magia,Magia,base,,,,,,,,,,
+items,piedra,Piedra,base,,,,,,,,,,
+items,cuerda,Cuerda,base,,,,,,,,,,
+items,espejo,Espejo,base,,,,,,,,,,
+items,pescado_mojado,Pescado mojado,craft,,,,,,,,,,
+items,pescado_asado,Pescado asado,craft,,,,,,,,,,
+items,pescado_ensartado,Pescado ensartado,craft,,,,,,,,,,
+items,hechizo_convertir_en_pez,Hechizo: Convertir en pez,hechizo,,,,,,,,,,
+items,pescado_aplastado,Pescado aplastado,craft,,,,,,,,,,
+items,pescado_atado,Pescado atado,craft,,,,,,,,,,
+items,pescado_vanidoso,Pescado vanidoso,craft,,,,,,,,,,
+items,vapor,Vapor,craft,,,,,,,,,,
+items,palo_mojado,Palo mojado,craft,,,,,,,,,,
+items,hechizo_invocar_marea,Hechizo: Invocar marea,hechizo,,,,,,,,,,
+items,barro,Barro,craft,,,,,,,,,,
+items,cuerda_empapada,Cuerda empapada,craft,,,,,,,,,,
+items,espejo_empanado,Espejo empañado,craft,,,,,,,,,,
+items,antorcha,Antorcha,craft,,,,,,,,,,
+items,hechizo_llama_azul,Hechizo: Llama azul,hechizo,,,,,,,,,,
+items,piedra_caliente,Piedra caliente,craft,,,,,,,,,,
+items,cuerda_quemada,Cuerda quemada,craft,,,,,,,,,,
+items,rayo_solar,Rayo solar,craft,,,,,,,,,,
+items,varita_magica,Varita mágica,craft,,,,,,,,,,
+items,garrote,Garrote,craft,,,,,,,,,,
+items,lazo,Lazo,craft,,,,,,,,,,
+items,periscopio,Periscopio,craft,,,,,,,,,,
+items,piedra_filosofal,Piedra filosofal,craft,,,,,,,,,,
+items,cuerda_encantada,Cuerda encantada,craft,,,,,,,,,,
+items,espejo_encantado,Espejo encantado,craft,,,,,,,,,,
+items,boleadora,Boleadora,craft,,,,,,,,,,
+items,espejo_roto,Espejo roto,craft,,,,,,,,,,
+items,trampa_de_reflejo,Trampa de reflejo,craft,,,,,,,,,,
+recetas_t1,,,,pescado,agua,pescado_mojado,,,,,,,
+recetas_t1,,,,pescado,fuego,pescado_asado,,,,,,,
+recetas_t1,,,,pescado,palo,pescado_ensartado,,,,,,,
+recetas_t1,,,,pescado,magia,hechizo_convertir_en_pez,,,,,,,
+recetas_t1,,,,pescado,piedra,pescado_aplastado,,,,,,,
+recetas_t1,,,,pescado,cuerda,pescado_atado,,,,,,,
+recetas_t1,,,,pescado,espejo,pescado_vanidoso,,,,,,,
+recetas_t1,,,,agua,fuego,vapor,,,,,,,
+recetas_t1,,,,agua,palo,palo_mojado,,,,,,,
+recetas_t1,,,,agua,magia,hechizo_invocar_marea,,,,,,,
+recetas_t1,,,,agua,piedra,barro,,,,,,,
+recetas_t1,,,,agua,cuerda,cuerda_empapada,,,,,,,
+recetas_t1,,,,agua,espejo,espejo_empanado,,,,,,,
+recetas_t1,,,,fuego,palo,antorcha,,,,,,,
+recetas_t1,,,,fuego,magia,hechizo_llama_azul,,,,,,,
+recetas_t1,,,,fuego,piedra,piedra_caliente,,,,,,,
+recetas_t1,,,,fuego,cuerda,cuerda_quemada,,,,,,,
+recetas_t1,,,,fuego,espejo,rayo_solar,,,,,,,
+recetas_t1,,,,palo,magia,varita_magica,,,,,,,
+recetas_t1,,,,palo,piedra,garrote,,,,,,,
+recetas_t1,,,,palo,cuerda,lazo,,,,,,,
+recetas_t1,,,,palo,espejo,periscopio,,,,,,,
+recetas_t1,,,,magia,piedra,piedra_filosofal,,,,,,,
+recetas_t1,,,,magia,cuerda,cuerda_encantada,,,,,,,
+recetas_t1,,,,magia,espejo,espejo_encantado,,,,,,,
+recetas_t1,,,,piedra,cuerda,boleadora,,,,,,,
+recetas_t1,,,,piedra,espejo,espejo_roto,,,,,,,
+recetas_t1,,,,cuerda,espejo,trampa_de_reflejo,,,,,,,
+ogro,,,,,,,pescado,jugador_muere,ogro__pescado__jugador_muere,vivo,,,"Le ofrecés el pescado. El ogro lo muerde con fe… y su cara dice ‘traición gastronómica’.<br><br>Te mira como si fueras un crimen y te borra de la historia con una palmada."
+ogro,,,,,,,agua,neutral,ogro__agua__neutral,confundido,,"","Le das agua. El ogro la huele, la mira, y decide que es ‘sospechosa por transparente’.<br><br>Se la tira encima y queda más enojado, pero no lo suficiente como para matarte todavía."
+ogro,,,,,,,fuego,ogro_muere,ogro__fuego__ogro_muere,muerto,,"","Le tirás fuego. Por un instante el ogro parece una antorcha trágica con piernas.<br><br>Grita, corre en círculos, se cae. Se apaga. Silencio."
+ogro,,,,,,,palo,neutral,ogro__palo__neutral,vivo,,"","Le mostrás el palo. El ogro lo prueba como si fuera helado y te devuelve una mirada de decepción profunda.<br><br>Se lo guarda igual. Nadie sabe por qué."
+ogro,,,,,,,magia,ogro_transformado,ogro__magia__ogro_transformado,hipnotizado,ogro_esta_flotando,"","Le ofrecés magia pura. El ogro la aspira como si fuera perfume caro.<br><br>Empieza a flotar unos centímetros y se queda mirando el portal como si recordara algo importante."
+ogro,,,,,,,piedra,jugador_muere,ogro__piedra__jugador_muere,vivo,,"","Le das una piedra. El ogro asume que es un insulto cultural y te lo devuelve con intereses.<br><br>No sobrevivís al gesto educativo."
+ogro,,,,,,,cuerda,ogro_amigo,ogro__cuerda__ogro_amigo,amigo,ogro_te_respeta,"","Le das la cuerda. El ogro la examina, asiente, y hace un nudo perfecto que te humilla.<br><br>Te guiña un ojo. Claramente ganaste respeto."
+ogro,,,,,,,espejo,ogro_amigo,ogro__espejo__ogro_amigo,amigo,ogro_se_siente_lindo,"","Le alcanzás el espejo. El ogro se mira… y se emociona.<br><br>Te abraza con fuerza excesiva. Ahora sos su asesor de autoestima."
+ogro,,,,,,,pescado_mojado,jugador_muere,ogro__pescado_mojado__jugador_muere,vivo,,"","Le das pescado mojado. El ogro lo interpreta como ‘pescado triste’.<br><br>Decide que tu castigo es proporcional a tu cocina. Fin."
+ogro,,,,,,,pescado_asado,ogro_amigo,ogro__pescado_asado__ogro_amigo,amigo,ogro_es_tu_amigo,"","El ogro prueba el pescado asado. Se le humedecen los ojos (o es grasa, es discutible).<br><br>Te da una palmada que casi te manda a otra dimensión. Ya está: sos su compinche."
+ogro,,,,,,,pescado_ensartado,neutral,ogro__pescado_ensartado__neutral,vivo,,"","Le das el pescado ensartado. El ogro lo usa como micrófono y canta una canción terrible.<br><br>Sobrevivís, pero pagás el precio emocional."
+ogro,,,,,,,hechizo_convertir_en_pez,ogro_transformado,ogro__hechizo_convertir_en_pez__ogro_transformado,pez,"ogro_es_pez,ogro_es_gigante","", "Pronunciás el hechizo. El ogro se congela… y hace ‘BLUP’.<br><br>Ahora hay un pez enorme con expresión de ogro. Técnicamente sigue mirándote con juicio."
+ogro,,,,,,,pescado_aplastado,jugador_muere,ogro__pescado_aplastado__jugador_muere,vivo,,"","Le ofrecés pescado aplastado. El ogro lo interpreta como amenaza mafiosa.<br><br>Te demuestra que él es la mafia."
+ogro,,,,,,,pescado_atado,ogro_amigo,ogro__pescado_atado__ogro_amigo,amigo,ogro_rie_mucho,"","Le das el pescado atado. El ogro se ríe como si hubieras contado el mejor chiste del mundo.<br><br>Te adopta socialmente. No preguntes."
+ogro,,,,,,,pescado_vanidoso,ogro_amigo,ogro__pescado_vanidoso__ogro_amigo,amigo,ogro_es_fan_del_glam,"","Le mostrás el pescado vanidoso. El ogro y el pescado se miran en el espejo y aprueban sus perfiles.<br><br>El ogro decide que vos entendés el arte. Amistad."
+ogro,,,,,,,vapor,neutral,ogro__vapor__neutral,vivo,,"","Le acercás vapor. El ogro intenta agarrarlo con la mano y se frustra con la física.<br><br>Se calma respirando… accidentalmente. Funciona demasiado bien."
+ogro,,,,,,,palo_mojado,neutral,ogro__palo_mojado__neutral,vivo,,"","Le das un palo mojado. El ogro lo sacude y te salpica con intención pedagógica.<br><br>No es amistad, pero tampoco muerte. Por ahora."
+ogro,,,,,,,hechizo_invocar_marea,ogro_transformado,ogro__hechizo_invocar_marea__ogro_transformado,amigo,"ogro_ama_el_mar","", "Invocás la marea. El agua aparece de la nada y le hace cosquillas al ogro en los tobillos.<br><br>El ogro se ríe y te levanta como si fueras un trofeo acuático. Te cae bien."
+ogro,,,,,,,barro,jugador_muere,ogro__barro__jugador_muere,vivo,,"","Le das barro. El ogro asume que lo querés maquillar.<br><br>Él no se maquilla. Te mata por falta de respeto estético."
+ogro,,,,,,,cuerda_empapada,ogro_amigo,ogro__cuerda_empapada__ogro_amigo,amigo,ogro_te_ensena_nudos,"","Le das una cuerda empapada. El ogro la usa para hacer un nudo marinero legendario.<br><br>Te enseña orgulloso. Ahora sos su aprendiz."
+ogro,,,,,,,espejo_empanado,neutral,ogro__espejo_empanado__neutral,vivo,,"","Le das el espejo empañado. El ogro dibuja una carita en el vapor y se ríe solo.<br><br>Te mira como diciendo ‘eso lo inventé yo’. Complicado."
+ogro,,,,,,,antorcha,ogro_muere,ogro__antorcha__ogro_muere,muerto,,"","Le arrimás la antorcha. El ogro entra en modo pánico, corre, y el destino hace el resto.<br><br>Muere de forma exagerada y te quedás con culpa de película."
+ogro,,,,,,,hechizo_llama_azul,ogro_muere,ogro__hechizo_llama_azul__ogro_muere,muerto,"ogro_queda_cristalizado","", "Lanzás la llama azul. El ogro no se quema: se ‘enfría’ hacia otro estado de la materia.<br><br>Queda como estatua rara. Fin técnico."
+ogro,,,,,,,piedra_caliente,ogro_muere,ogro__piedra_caliente__ogro_muere,muerto,,"","Le das la piedra caliente. El ogro la agarra con confianza y aprende el dolor instantáneo.<br><br>Hace un salto mortal no solicitado y cae mal. No se levanta."
+ogro,,,,,,,cuerda_quemada,neutral,ogro__cuerda_quemada__neutral,vivo,,"","Le das cuerda quemada. El ogro la huele y decide que eso significa ‘advertencia’.<br><br>Te deja vivir, pero te mira como si fueras un presagio."
+ogro,,,,,,,rayo_solar,ogro_transformado,ogro__rayo_solar__ogro_transformado,ciego,"ogro_usa_lentes,ogro_es_mas_cauto","", "Le reflejás el rayo solar. El ogro ve el universo por dentro por un segundo.<br><br>Queda medio encandilado y de repente muy filosófico. No te mata. Te juzga en silencio."
+ogro,,,,,,,varita_magica,ogro_transformado,ogro__varita_magica__ogro_transformado,princesa,"ogro_es_princesa","", "Apuntás con la varita. El ogro tiembla, brilla y… listo.<br><br>Ahora es una princesa ogro con la misma cara de antes. Te mira con enojo real."
+ogro,,,,,,,garrote,jugador_muere,ogro__garrote__jugador_muere,vivo,,"","Le mostrás el garrote. El ogro lo interpreta como desafío formal y te gana con un garrote imaginario más grande.<br><br>No tenías chances."
+ogro,,,,,,,lazo,ogro_amigo,ogro__lazo__ogro_amigo,amigo,ogro_te_usa_de_cowboy,"","Intentás enlazar al ogro. Sorprendentemente funciona… un segundo.<br><br>El ogro se ríe, te levanta, y ahora ustedes juegan a ‘cowboy’. Amistad rara."
+ogro,,,,,,,periscopio,neutral,ogro__periscopio__neutral,vivo,ogro_es_curioso,"","Le das el periscopio. El ogro mira por arriba del portal y murmura ‘ah’.<br><br>Desde ese momento, sabe cosas. No te dice cuáles."
+ogro,,,,,,,piedra_filosofal,ogro_amigo,ogro__piedra_filosofal__ogro_amigo,amigo,ogro_te_respetA,"","Le das la piedra filosofal. El ogro la sostiene con reverencia absurda.<br><br>Te nombra ‘alquimista oficial’. Amistad con protocolo."
+ogro,,,,,,,cuerda_encantada,ogro_transformado,ogro__cuerda_encantada__ogro_transformado,atado,"ogro_queda_atado","", "La cuerda encantada se mueve sola y envuelve al ogro como si fuera un paquete.<br><br>El ogro no muere, pero queda inmóvil y ofendido. Sobrevivís."
+ogro,,,,,,,espejo_encantado,ogro_transformado,ogro__espejo_encantado__ogro_transformado,duplicado,"ogro_tiene_doble","", "El espejo encantado muestra un ogro alternativo… y sale.<br><br>Ahora hay dos ogros discutiendo quién es el original. Te ignoran por completo."
+ogro,,,,,,,boleadora,ogro_transformado,ogro__boleadora__ogro_transformado,tropeado,"ogro_enredado","", "La boleadora vuela sola y le ata los tobillos al ogro con precisión ancestral.<br><br>El ogro cae como torre. No muere, pero su orgullo sí."
+ogro,,,,,,,espejo_roto,jugador_muere,ogro__espejo_roto__jugador_muere,vivo,,"","Le das el espejo roto. El ogro se ve en mil pedazos y decide que eso es culpa tuya.<br><br>Te mata para ‘arreglar la realidad’."
+ogro,,,,,,,trampa_de_reflejo,ogro_transformado,ogro__trampa_de_reflejo__ogro_transformado,atrapado,"ogro_atrapado_en_reflejo","", "Armás la trampa de reflejo. El ogro mira… y su reflejo lo absorbe con un ‘slurp’ elegante.<br><br>Queda atrapado en un espejo. Técnicamente está vivo. Técnicamente."
+portal,,,,,,,agua,final_malo,final__agua__solo_ahogo,,,"{""estado_ogro"":""muerto""}","Tirás el agua al portal. Todo se vuelve océano. Intentás nadar… y recordás que sos un mamífero con mucha confianza y poca técnica.<br><br>Te cansás. Te hundís. Fin acuático."
+portal,,,,,,,agua,final_bueno,final__agua__con_ogro_isla,,,"{""estado_ogro"":""amigo""}","Tirás el agua al portal. Todo se vuelve océano. El ogro sonríe con seguridad olímpica.<br><br>Te subís a su espalda. Te lleva hasta una isla donde sirenas y tritones te reciben como ‘el humano que vino con ogro’."
+portal,,,,,,,agua,final_especial,final__agua__ogro_pez_rey_tritones,,,"{""flags_all"":[""ogro_es_pez""]}","Tirás el agua al portal. El mundo acuático te abraza… y el ogro-pez te lleva como un rey en su lomo gigante.<br><br>Los tritones hacen reverencias. ‘EL REY DEL PEZ OGRO’, anuncian. Claramente es un título oficial."
+portal,,,,,,,pescado,final_generico,final__pescado__generico,,,"","Tirás el pescado al portal. Caés en un mercado interdimensional donde todo huele a mar y deuda.<br><br>Te persigue un pez funcionario. Firmás papeles. No entendés nada. Fin administrativo."
+portal,,,,,,,fuego,final_generico,final__fuego__generico,,,"","Tirás fuego al portal. El portal se ofende y te manda a un mundo hecho de ceniza y viento.<br><br>Sobrevivís un rato, pero el mundo te gana por desgaste. Fin gris."
+portal,,,,,,,palo,final_generico,final__palo__generico,,,"","Tirás el palo al portal. Caés en un bosque donde los árboles hablan solo de carpintería.<br><br>Te nombran ‘rama honoraria’. Te perdés para siempre. Fin leñoso."
+portal,,,,,,,magia,final_generico,final__magia__generico,,,"","Tirás magia al portal. Te responde con más magia de la que pediste.<br><br>Terminás en una escuela de hechicería donde sos el único sin uniforme. Fin humillante."
+portal,,,,,,,piedra,final_generico,final__piedra__generico,,,"","Tirás la piedra al portal. Caés en un planeta que valora a las rocas como dioses.<br><br>Te confunden con un profeta por llevar una piedra. Te hacen discursos. Fin mineral."
+portal,,,,,,,cuerda,final_generico,final__cuerda__generico,,,"","Tirás la cuerda al portal. Caés en una ciudad vertical sin escaleras.<br><br>Te convertís en héroe de la gente por saber atar nudos. Fin trepable."
+portal,,,,,,,espejo,final_generico,final__espejo__generico,,,"","Tirás el espejo al portal. Caés en un mundo donde todos son tu reflejo con opiniones distintas.<br><br>No hay paz. Solo debates. Fin argumental."
+portal,,,,,,,pescado_asado,final_generico,final__pescado_asado__generico,,,"","Tirás el pescado asado al portal. Caés en un banquete eterno donde cada mesa te juzga por tu sazón.<br><br>Comés bien, pero tu autoestima muere. Fin gourmet."
+portal,,,,,,,hechizo_convertir_en_pez,final_especial,final__hechizo_convertir_en_pez__acuario_real,,,"","Tirás el hechizo al portal y entrás a un acuario real donde los peces gobiernan con elegancia cruel.<br><br>Te invitan… o te adoptan. No queda claro. Fin burbujeante."
+portal,,,,,,,antorcha,final_generico,final__antorcha__generico,,,"","Tirás la antorcha al portal. Caés en una cueva infinita donde la luz atrae cosas que no querés ver.<br><br>Corrés, te cansás, te resignás. Fin oscuro con iluminación."
+portal,,,,,,,varita_magica,final_especial,final__varita_magica__reino_de_cuento,,,"","Tirás la varita al portal. Te manda a un reino de cuento donde todo rima y nadie te cree.<br><br>Te convierten en personaje secundario. Fin narrativo."
+portal,,,,,,,piedra_filosofal,final_especial,final__piedra_filosofal__alquimia_total,,,"","Tirás la piedra filosofal al portal. Todo se vuelve oro… incluso tus preocupaciones.<br><br>La riqueza es enorme. La salida, inexistente. Fin brillante."
+portal,,,,,,,espejo_encantado,final_especial,final__espejo_encantado__mundo_reflejo,,,"","Tirás el espejo encantado al portal. Te recibe un mundo espejo donde tus decisiones pasan primero por un ‘reflejo consultor’.<br><br>No tomás una sola decisión sin discutirla con vos mismo. Fin existencial."
+portal,,,,,,,trampa_de_reflejo,final_especial,final__trampa_de_reflejo__prisiones_de_vidrio,,,"","Tirás la trampa de reflejo al portal. Caés en una prisión de vidrio donde todo lo que mirás te mira de vuelta.<br><br>Aprendés a no mirar. Fin incómodo."
