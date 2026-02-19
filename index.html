@@ -3,594 +3,243 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>El ogro y el portal (proto)</title>
+  <title>El ogro y el portal</title>
   <style>
     :root{
-      --bg:#0f1220;
-      --panel:#171a2d;
-      --panel2:#1f2340;
-      --text:#e9ecff;
-      --muted:#aab0d6;
-      --accent:#7dd3fc;
-      --good:#86efac;
-      --bad:#fca5a5;
-      --warn:#fde68a;
-      --stroke:rgba(255,255,255,.12);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bg:#111318;
+      --panel:#0f1116;
+      --paper:#e8d7b7;
+      --ink:#1b1b1b;
+      --stroke:#111;
+      --white:#f4f6ff;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
-    body{
-      margin:0;
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(125,211,252,.12), transparent 60%),
-                  radial-gradient(900px 500px at 80% 40%, rgba(134,239,172,.10), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-    }
+    body{ margin:0; background:var(--bg); color:var(--white); }
     header{
-      padding:16px 18px;
-      border-bottom:1px solid var(--stroke);
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      position:sticky;
-      top:0;
-      background: rgba(15,18,32,.85);
-      backdrop-filter: blur(10px);
-      z-index:10;
-    }
-    header .left{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .badge{
-      font-size:12px;
-      padding:6px 10px;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      color:var(--muted);
-      background: rgba(255,255,255,.03);
+      padding:12px 16px; border-bottom:1px solid rgba(255,255,255,.12);
+      display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; background:rgba(17,19,24,.9); backdrop-filter: blur(8px);
     }
     .btn{
-      cursor:pointer;
-      user-select:none;
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      padding:8px 12px;
-      border-radius:12px;
-      box-shadow: none;
-      transition: transform .05s ease, background .2s ease;
-      font-weight:600;
-      font-size:13px;
+      cursor:pointer; border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.06); color:var(--white);
+      padding:8px 12px; border-radius:10px; font-weight:700;
     }
-    .btn:active{ transform: translateY(1px); }
-    .btn:hover{ background: rgba(255,255,255,.06); }
+    .wrap{ max-width:1100px; margin:0 auto; padding:14px; display:flex; flex-direction:column; gap:14px; }
 
-    main{
+    /* Panel tipo “mockup” */
+    .screen{
+      border:4px solid #000;
+      background: #fff;
+      padding:14px;
       display:grid;
-      grid-template-columns: 1.25fr .95fr;
-      gap:16px;
-      padding:16px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: 1.35fr 1fr;
+      gap:14px;
+      align-items:stretch;
     }
 
-    .stage{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--stroke);
-      border-radius:18px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    /* Pergamino (placeholder) */
+    .scroll{
+      background: var(--paper);
+      color: var(--ink);
+      border:4px solid #000;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 250px;
     }
-    .stage-top{
+    .scroll .title{
+      font-weight:900;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    .scroll .text{
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    /* Escena derecha (ogro/portal + items) */
+    .stage{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .scene{
+      border:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:140px;
+      position:relative;
+    }
+    .sceneBox{
+      width:120px; height:120px;
+      border-radius:18px;
+      border:4px solid #000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      color:#000;
+      background: #eee;
+    }
+    .ogreMini{
+      position:absolute;
+      right:-2px;
+      top:-2px;
+      width:54px; height:54px;
+      border:4px solid #000;
+      border-radius:999px;
+      background:#e8ffe8;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; color:#000;
+    }
+    .ogreMini.hidden{ display:none; }
+
+    .itemsGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:12px;
-      padding:12px;
-      border-bottom:1px solid var(--stroke);
-      background: linear-gradient(to bottom, rgba(255,255,255,.04), transparent);
-    }
-    .dropzone{
-      border:1px dashed rgba(255,255,255,.22);
-      border-radius:16px;
-      min-height: 220px;
-      padding:12px;
-      position:relative;
-      background: rgba(0,0,0,.12);
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      justify-content:flex-end;
-    }
-    .dropzone h2{
-      margin:0;
-      font-size:14px;
-      color:var(--muted);
-      font-weight:700;
-      letter-spacing:.2px;
-      position:absolute;
-      top:12px;
-      left:12px;
-    }
-    .dropzone .hint{
-      font-size:12px;
-      color:rgba(255,255,255,.55);
-    }
-    .dropzone.active{
-      outline: 2px solid rgba(125,211,252,.55);
-      outline-offset: -2px;
-      background: rgba(125,211,252,.08);
-    }
-
-    .inventory{
-      padding:12px;
-      display:flex;
-      flex-direction:column;
       gap:10px;
     }
-    .inventory h3{
-      margin:0;
-      font-size:14px;
-      color:var(--muted);
-      font-weight:700;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .inv-grid{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap:10px;
-    }
-
     .item{
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.04);
-      border-radius:16px;
-      padding:10px;
-      min-height: 54px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:4px;
-      cursor:grab;
+      border:4px solid #000;
+      background:#fff;
+      color:#000;
+      padding:14px 10px;
+      text-align:center;
+      font-weight:900;
       user-select:none;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      cursor:grab;
     }
-    .item:hover{
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.18);
-      transform: translateY(-1px);
-    }
-    .item:active{ cursor:grabbing; transform: translateY(0px) scale(.99); }
-    .item .name{ font-weight:800; font-size:14px; }
-    .item .meta{ font-size:11px; color: rgba(255,255,255,.58); }
-    .item.drop-ok{ outline:2px solid rgba(134,239,172,.45); outline-offset:-2px; }
-    .item.drop-bad{ outline:2px solid rgba(252,165,165,.45); outline-offset:-2px; }
+    .item:active{ cursor:grabbing; }
+    .item.drop-ok{ outline:4px solid #00c853; outline-offset:2px; }
+    .item.drop-bad{ outline:4px solid #ff5252; outline-offset:2px; }
 
-    .side{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--stroke);
-      border-radius:18px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      min-height: 520px;
+    .hintRow{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      color:#000; font-size:12px; opacity:.8;
     }
-    .side-header{
-      padding:12px;
-      border-bottom:1px solid var(--stroke);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.04), transparent);
+    .pill{
+      border:2px solid #000; padding:4px 8px; border-radius:999px; font-weight:900;
+      background:#fff;
     }
-    .side-header .title{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-    .side-header .title b{ font-size:14px; }
-    .side-header .title span{ font-size:12px; color:var(--muted); }
 
-    .log{
-      padding:12px;
-      overflow:auto;
-      flex:1;
-    }
-    .card{
-      border:1px solid var(--stroke);
-      background: rgba(0,0,0,.14);
-      border-radius:16px;
-      padding:12px;
-      margin-bottom:10px;
-    }
-    .card .kicker{
-      font-size:11px;
-      color: rgba(255,255,255,.65);
-      margin-bottom:6px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .card .kicker .pill{
-      padding:4px 8px;
-      border-radius:999px;
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
-      font-weight:700;
-      color: var(--muted);
-      white-space:nowrap;
-    }
-    .card p{
-      margin:0 0 10px 0;
-      line-height:1.45;
-      color: rgba(255,255,255,.88);
-    }
-    .card p:last-child{ margin-bottom:0; }
-    .status{
-      padding:10px 12px;
-      border-top:1px solid var(--stroke);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      background: rgba(0,0,0,.10);
-    }
-    .status .state{
-      font-weight:800;
-      font-size:13px;
-    }
-    .state.good{ color: var(--good); }
-    .state.bad{ color: var(--bad); }
-    .state.warn{ color: var(--warn); }
-    .small{ font-size:12px; color: var(--muted); }
-    .hidden{ display:none !important; }
-
-    @media (max-width: 980px){
-      main{ grid-template-columns: 1fr; }
-      .inv-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .dropzone{ min-height: 170px; }
+    @media (max-width: 900px){
+      .screen{ grid-template-columns: 1fr; }
+      .scene{ min-height:110px; }
     }
   </style>
 </head>
 
 <body>
 <header>
-  <div class="left">
-    <div style="font-weight:900;letter-spacing:.2px;">El ogro y el portal</div>
-    <div id="phaseBadge" class="badge">Fase: Combinar</div>
-    <div id="poolBadge" class="badge">Pool: 8</div>
-  </div>
-  <div style="display:flex;gap:10px;align-items:center;">
+  <div style="font-weight:900;">El ogro y el portal</div>
+  <div style="display:flex; gap:10px;">
     <button class="btn" id="btnReloadData">Recargar CSV</button>
     <button class="btn" id="btnNewRun">Nueva partida</button>
   </div>
 </header>
 
-<main>
-  <section class="stage">
-    <div class="stage-top">
-      <!-- OGRO: solo una div (placeholder de imagen/animación) -->
-      <div id="ogreZone" class="dropzone" aria-label="Ogro (drop)">
-        <h2>OGRO</h2>
-        <div class="hint">Arrastrá un objeto acá para usarlo con el ogro.</div>
-        <div class="small" id="ogreHint2"></div>
-      </div>
+<div class="wrap">
 
-      <!-- PORTAL: solo una div (placeholder de imagen/animación) -->
-      <div id="portalZone" class="dropzone" aria-label="Portal (drop)">
-        <h2>PORTAL</h2>
-        <div class="hint">Después del ogro, arrastrá el objeto restante acá.</div>
-        <div class="small" id="portalHint2"></div>
+  <!-- PANTALLA OGRO -->
+  <section class="screen" id="screenOgre">
+    <div class="scroll">
+      <div class="title" id="ogreTitle">ANTES DEL PORTAL</div>
+      <div class="text" id="ogreNarrative">
+        Arrastrá un objeto al OGRO o combiná objetos entre sí.
+      </div>
+      <div class="hintRow">
+        <span class="pill" id="pillPhase">FASE: COMBINAR</span>
+        <span class="pill" id="pillOgreState">OGRO: —</span>
       </div>
     </div>
 
-    <div class="inventory">
-      <h3>
-        <span>Inventario (4 objetos random)</span>
-        <span class="small">Tip: arrastrá un objeto sobre otro para combinar</span>
-      </h3>
-      <div id="inventory" class="inv-grid"></div>
+    <div class="stage">
+      <!-- Dropzone OGRO -->
+      <div class="scene" id="ogreZone" aria-label="Ogro (drop)">
+        <div class="sceneBox">OGRO</div>
+      </div>
+
+      <!-- 4 items -->
+      <div class="itemsGrid" id="inventoryOgre"></div>
     </div>
   </section>
 
-  <aside class="side">
-    <div class="side-header">
-      <div class="title">
-        <b>Narrativa</b>
-        <span id="subStatus">Combiná objetos. Luego usá uno con el ogro.</span>
+  <!-- PANTALLA PORTAL -->
+  <section class="screen" id="screenPortal">
+    <div class="scroll">
+      <div class="title" id="portalTitle">DESPUÉS DEL OGRO</div>
+      <div class="text" id="portalNarrative">
+        Cuando sobrevivas al ogro, tirá el objeto restante al PORTAL.
       </div>
-      <div class="badge" id="ogreStateBadge">Ogro: (sin definir)</div>
+      <div class="hintRow">
+        <span class="pill" id="pillPortalPhase">FASE: PORTAL</span>
+        <span class="pill" id="pillEnding">ENDING_ID: —</span>
+      </div>
     </div>
 
-    <div id="log" class="log"></div>
-
-    <div class="status">
-      <div>
-        <div id="stateLine" class="state warn">Listo para combinar</div>
-        <div id="stateHelp" class="small">Combiná (Tier 1 / Tier 2) o usá un objeto con el ogro.</div>
+    <div class="stage">
+      <!-- Dropzone PORTAL -->
+      <div class="scene" id="portalZone" aria-label="Portal (drop)">
+        <div class="sceneBox">PORTAL</div>
+        <div class="ogreMini hidden" id="ogreMini">OG</div>
       </div>
-      <div class="small" id="flagsLine">Flags: —</div>
+
+      <!-- mismos 4 slots visuales; se actualizan con el inventario actual -->
+      <div class="itemsGrid" id="inventoryPortal"></div>
     </div>
-  </aside>
-</main>
+  </section>
+
+</div>
 
 <script>
-/**
- * PROTO: todo en un único HTML.
- * - UI drag & drop (combinar items, dropear en ogro/portal)
- * - Datos desde un CSV (por ahora: fallback embebido)
- * - Tier 1: recetas explícitas (como ya definimos)
- * - Tier 2: se genera automáticamente con tu regla:
- *   (resultado tier1) + (base NO usado en su creación)
- *   y crea ids determinísticos: t2__{tier1}__{base}
- *
- * Más adelante:
- * - reemplazamos textos placeholder por los del CSV
- * - agregamos badges, unlocks, imágenes, animaciones, etc.
- */
+/* ==== CONFIG ==== */
+const CSV_URL = "game_data.csv"; // GitHub Pages lo va a servir OK
 
-/* =========================
-   1) CSV: formato (uno solo)
-   =========================
-   Un CSV único con columna "tabla".
-   Tablas soportadas:
-   - items: id,nombre,tipo
-   - recetas_t1: a,b,result
-   - ogro: item, outcome, estado_ogro, flags_set, texto
-   - portal: item, condiciones, outcome, texto
-     condiciones: JSON en una celda (ej: {"estado_ogro":"amigo","flags_all":["ogro_es_pez"]})
-   NOTA: por ahora el CSV es opcional; si no existe, usamos fallback.
-
-   Archivo esperado (si lo creás): game_data.csv al lado del HTML.
-*/
-
-const CSV_URL = "game_data.csv";
-
-// Fallback (copiable/editable) — lo vamos a ir reemplazando por tu CSV real.
+/* ==== FALLBACK mínimo (si no carga el CSV) ==== */
 const FALLBACK_DATA = {
   items: [
-    { id:"pescado", nombre:"Pescado", tipo:"base" },
-    { id:"agua", nombre:"Agua", tipo:"base" },
-    { id:"fuego", nombre:"Fuego", tipo:"base" },
-    { id:"palo", nombre:"Palo", tipo:"base" },
-    { id:"magia", nombre:"Magia", tipo:"base" },
-    { id:"piedra", nombre:"Piedra", tipo:"base" },
-    { id:"cuerda", nombre:"Cuerda", tipo:"base" },
-    { id:"espejo", nombre:"Espejo", tipo:"base" },
-
-    // Tier 1 results (mínimo para que el UI muestre nombres lindos)
-    { id:"pescado_mojado", nombre:"Pescado mojado", tipo:"craft" },
-    { id:"pescado_asado", nombre:"Pescado asado", tipo:"craft" },
-    { id:"pescado_ensartado", nombre:"Pescado ensartado", tipo:"craft" },
-    { id:"hechizo_convertir_en_pez", nombre:"Hechizo: Convertir en pez", tipo:"hechizo" },
-    { id:"pescado_aplastado", nombre:"Pescado aplastado", tipo:"craft" },
-    { id:"pescado_atado", nombre:"Pescado atado", tipo:"craft" },
-    { id:"pescado_vanidoso", nombre:"Pescado vanidoso", tipo:"craft" },
-
-    { id:"vapor", nombre:"Vapor", tipo:"craft" },
-    { id:"palo_mojado", nombre:"Palo mojado", tipo:"craft" },
-    { id:"hechizo_invocar_marea", nombre:"Hechizo: Invocar marea", tipo:"hechizo" },
-    { id:"barro", nombre:"Barro", tipo:"craft" },
-    { id:"cuerda_empapada", nombre:"Cuerda empapada", tipo:"craft" },
-    { id:"espejo_empanado", nombre:"Espejo empañado", tipo:"craft" },
-
-    { id:"antorcha", nombre:"Antorcha", tipo:"craft" },
-    { id:"hechizo_llama_azul", nombre:"Hechizo: Llama azul", tipo:"hechizo" },
-    { id:"piedra_caliente", nombre:"Piedra caliente", tipo:"craft" },
-    { id:"cuerda_quemada", nombre:"Cuerda quemada", tipo:"craft" },
-    { id:"rayo_solar", nombre:"Rayo solar", tipo:"craft" },
-
-    { id:"varita_magica", nombre:"Varita mágica", tipo:"craft" },
-    { id:"garrote", nombre:"Garrote", tipo:"craft" },
-    { id:"lazo", nombre:"Lazo", tipo:"craft" },
-    { id:"periscopio", nombre:"Periscopio", tipo:"craft" },
-
-    { id:"piedra_filosofal", nombre:"Piedra filosofal", tipo:"craft" },
-    { id:"cuerda_encantada", nombre:"Cuerda encantada", tipo:"craft" },
-    { id:"espejo_encantado", nombre:"Espejo encantado", tipo:"craft" },
-
-    { id:"boleadora", nombre:"Boleadora", tipo:"craft" },
-    { id:"espejo_roto", nombre:"Espejo roto", tipo:"craft" },
-    { id:"trampa_de_reflejo", nombre:"Trampa de reflejo", tipo:"craft" }
+    { id:"pescado", nombre:"PESCADO", tipo:"base" },
+    { id:"agua", nombre:"AGUA", tipo:"base" },
+    { id:"fuego", nombre:"FUEGO", tipo:"base" },
+    { id:"palo", nombre:"PALO", tipo:"base" },
+    { id:"magia", nombre:"MAGIA", tipo:"base" },
+    { id:"piedra", nombre:"PIEDRA", tipo:"base" },
+    { id:"cuerda", nombre:"CUERDA", tipo:"base" },
+    { id:"espejo", nombre:"ESPEJO", tipo:"base" }
   ],
-
-  recetas_t1: [
-    { a:"pescado", b:"agua", result:"pescado_mojado" },
-    { a:"pescado", b:"fuego", result:"pescado_asado" },
-    { a:"pescado", b:"palo", result:"pescado_ensartado" },
-    { a:"pescado", b:"magia", result:"hechizo_convertir_en_pez" },
-    { a:"pescado", b:"piedra", result:"pescado_aplastado" },
-    { a:"pescado", b:"cuerda", result:"pescado_atado" },
-    { a:"pescado", b:"espejo", result:"pescado_vanidoso" },
-
-    { a:"agua", b:"fuego", result:"vapor" },
-    { a:"agua", b:"palo", result:"palo_mojado" },
-    { a:"agua", b:"magia", result:"hechizo_invocar_marea" },
-    { a:"agua", b:"piedra", result:"barro" },
-    { a:"agua", b:"cuerda", result:"cuerda_empapada" },
-    { a:"agua", b:"espejo", result:"espejo_empanado" },
-
-    { a:"fuego", b:"palo", result:"antorcha" },
-    { a:"fuego", b:"magia", result:"hechizo_llama_azul" },
-    { a:"fuego", b:"piedra", result:"piedra_caliente" },
-    { a:"fuego", b:"cuerda", result:"cuerda_quemada" },
-    { a:"fuego", b:"espejo", result:"rayo_solar" },
-
-    { a:"palo", b:"magia", result:"varita_magica" },
-    { a:"palo", b:"piedra", result:"garrote" },
-    { a:"palo", b:"cuerda", result:"lazo" },
-    { a:"palo", b:"espejo", result:"periscopio" },
-
-    { a:"magia", b:"piedra", result:"piedra_filosofal" },
-    { a:"magia", b:"cuerda", result:"cuerda_encantada" },
-    { a:"magia", b:"espejo", result:"espejo_encantado" },
-
-    { a:"piedra", b:"cuerda", result:"boleadora" },
-    { a:"piedra", b:"espejo", result:"espejo_roto" },
-    { a:"cuerda", b:"espejo", result:"trampa_de_reflejo" }
-  ],
-
-  // Para que el flujo se vea ya:
-  ogro: [
-    {
-      item:"pescado",
-      outcome:"jugador_muere",
-      estado_ogro:"vivo",
-      flags_set: "",
-      texto:"Le ofrecés el pescado. El ogro lo muerde con fe… y su cara dice ‘traición gastronómica’.<br><br>Te mira como si fueras un crimen. No tenés tiempo de arrepentirte."
-    },
-    {
-      item:"fuego",
-      outcome:"ogro_muere",
-      estado_ogro:"muerto",
-      flags_set:"",
-      texto:"Le tirás fuego. Por un instante, el ogro parece una antorcha trágica con piernas.<br><br>Grita, corre en círculos, se cae. Se apaga. Silencio."
-    },
-    {
-      item:"pescado_asado",
-      outcome:"ogro_amigo",
-      estado_ogro:"amigo",
-      flags_set:"",
-      texto:"El ogro prueba el pescado asado. Se le humedecen los ojos (o es grasa, es discutible).<br><br>Te da una palmada que casi te manda a otra dimensión. Ya está: sos su compinche."
-    },
-    {
-      item:"hechizo_convertir_en_pez",
-      outcome:"ogro_transformado",
-      estado_ogro:"pez",
-      flags_set:"ogro_es_pez,ogro_es_gigante",
-      texto:"Pronunciás el hechizo. El ogro se congela… y hace ‘BLUP’.<br><br>Ahora hay un pez enorme con expresión de ogro. Técnicamente sigue mirándote con juicio."
-    }
-  ],
-
-  portal: [
-    {
-      item:"agua",
-      condiciones: { estado_ogro:"muerto" },
-      outcome:"final_malo",
-      texto:"Tirás el agua al portal. Todo se vuelve océano. Intentás nadar… y recordás que sos un mamífero con mucha confianza y poca técnica.<br><br>Te cansás. Te hundís. Fin acuático."
-    },
-    {
-      item:"agua",
-      condiciones: { estado_ogro:"amigo" },
-      outcome:"final_bueno",
-      texto:"Tirás el agua al portal. Todo se vuelve océano. El ogro sonríe con seguridad olímpica.<br><br>Te subís a su espalda. Te lleva hasta una isla donde sirenas y tritones te reciben como ‘el humano que vino con ogro’. Éxito."
-    },
-    {
-      item:"agua",
-      condiciones: { flags_all:["ogro_es_pez"] },
-      outcome:"final_especial",
-      texto:"Tirás el agua al portal. El mundo acuático te abraza… y el ogro-pez te lleva como un rey en su lomo gigante.<br><br>Los tritones hacen reverencias. ‘EL REY DEL PEZ OGRO’, anuncian. Claramente es un título oficial."
-    }
-  ]
+  recetas_t1: [],
+  ogro: [],
+  portal: []
 };
 
-/* =========================
-   2) Estado del juego
-   ========================= */
 let DATA = structuredClone(FALLBACK_DATA);
 
+/* ==== Estado del juego ==== */
 const state = {
-  phase: "combine", // combine -> ogre -> portal -> end
-  inventory: [], // array de itemIds presentes
-  ogre: {
-    outcome: null,        // jugador_muere / ogro_muere / ogro_amigo / ogro_transformado / ...
-    estado_ogro: null,    // vivo / muerto / amigo / pez / ...
-    flags: new Set()
-  },
-  lastRunSeed: null
+  phase: "combine",      // combine -> ogre -> portal -> end
+  inventory: [],         // ids actuales (máximo 4 en tu diseño)
+  ogre: { outcome:null, outcome_id:null, estado_ogro:null, flags:new Set() },
+  last_final_outcome_id: null
 };
 
-/* =========================
-   3) Utilidades
-   ========================= */
+function itemById(id){ return DATA.items.find(x=>x.id===id); }
+function itemName(id){ return itemById(id)?.nombre ?? id.toUpperCase(); }
+function itemType(id){ return itemById(id)?.tipo ?? "craft"; }
+function normalizePair(a,b){ return a < b ? [a,b] : [b,a]; }
+function keyPair(a,b){ const [x,y]=normalizePair(a,b); return `${x}__${y}`; }
 function randInt(n){ return Math.floor(Math.random()*n); }
-function pickDistinct(arr, k){
-  const copy = [...arr];
-  for(let i=copy.length-1;i>0;i--){
-    const j = randInt(i+1);
-    [copy[i],copy[j]]=[copy[j],copy[i]];
-  }
+function pickDistinct(arr,k){
+  const copy=[...arr];
+  for(let i=copy.length-1;i>0;i--){ const j=randInt(i+1); [copy[i],copy[j]]=[copy[j],copy[i]]; }
   return copy.slice(0,k);
 }
-function itemById(id){ return DATA.items.find(x=>x.id===id); }
-function itemName(id){ return itemById(id)?.nombre ?? id; }
-function itemType(id){ return itemById(id)?.tipo ?? "craft"; }
 
-function normalizePair(a,b){
-  return a < b ? [a,b] : [b,a];
-}
-function keyPair(a,b){
-  const [x,y]=normalizePair(a,b);
-  return `${x}__${y}`;
-}
-
-function logCard(titlePill, htmlText){
-  const el = document.createElement("div");
-  el.className = "card";
-  el.innerHTML = `
-    <div class="kicker">
-      <div>${new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"})}</div>
-      <div class="pill">${titlePill}</div>
-    </div>
-    <div>${htmlText}</div>
-  `;
-  document.getElementById("log").prepend(el);
-}
-
-function setPhase(phase){
-  state.phase = phase;
-  const badge = document.getElementById("phaseBadge");
-  const line = document.getElementById("stateLine");
-  const help = document.getElementById("stateHelp");
-  const sub = document.getElementById("subStatus");
-
-  const labels = {
-    combine: "Fase: Combinar",
-    ogre: "Fase: Ogro",
-    portal: "Fase: Portal",
-    end: "Fase: Fin"
-  };
-  badge.textContent = labels[phase] ?? `Fase: ${phase}`;
-
-  if(phase==="combine"){
-    line.textContent = "Listo para combinar";
-    line.className = "state warn";
-    help.textContent = "Combiná (Tier 1 / Tier 2) o usá un objeto con el ogro.";
-    sub.textContent = "Combiná objetos. Luego usá uno con el ogro.";
-  }
-  if(phase==="ogre"){
-    line.textContent = "Elegí qué usar con el ogro";
-    line.className = "state warn";
-    help.textContent = "Arrastrá un objeto al OGRO para resolver la primera parte.";
-    sub.textContent = "Arrastrá un objeto al ogro.";
-  }
-  if(phase==="portal"){
-    line.textContent = "Queda el portal";
-    line.className = "state warn";
-    help.textContent = "Arrastrá un objeto al PORTAL para finalizar.";
-    sub.textContent = "Arrastrá el objeto restante al portal.";
-  }
-  if(phase==="end"){
-    line.textContent = "Partida terminada";
-    line.className = "state good";
-    help.textContent = "Podés iniciar una nueva partida.";
-    sub.textContent = "Fin.";
-  }
-}
-
-/* =========================
-   4) Tier 1 + Tier 2: motor de combinaciones
-   ========================= */
-
-// Map tier1 keyPair(a,b) -> result
+/* ==== Tier1 maps + Tier2 regla ==== */
 let T1_MAP = new Map();
-// Map tier1 result -> [a,b] (origen)
 let T1_ORIGIN = new Map();
 
 function rebuildTier1Maps(){
@@ -602,81 +251,66 @@ function rebuildTier1Maps(){
     T1_ORIGIN.set(r.result, normalizePair(r.a, r.b));
   }
 }
-rebuildTier1Maps();
 
-// Generación automática de Tier 2 con tu regla.
 function tier2Combine(tier1Id, baseId){
-  // tier1Id debe ser un result de tier1; baseId debe ser base.
   const origin = T1_ORIGIN.get(tier1Id);
-  if(!origin) return null; // si no es tier1 conocido, no podemos aplicar regla
+  if(!origin) return null;
   const [a,b] = origin;
-  if(baseId === a || baseId === b) return null; // no se repite objeto
-  // resultado determinístico
+  if(baseId===a || baseId===b) return null; // tu regla
   return {
     id: `t2__${tier1Id}__${baseId}`,
     nombre: `${itemName(tier1Id)} + ${itemName(baseId)}`,
     tipo: "craft",
-    meta: { tier1: tier1Id, base: baseId }
   };
 }
 
-// Combinar dos items cualquiera:
-// - Si ambos son base: busca T1_MAP
-// - Si uno es tier1 y el otro es base: aplica regla tier2 (con exclusión)
-// - Si ambos son tier1: por ahora no (null). (lo habilitamos después si querés)
 function combineItems(idA, idB){
-  const tA = itemType(idA);
-  const tB = itemType(idB);
+  const isBaseA = itemType(idA)==="base";
+  const isBaseB = itemType(idB)==="base";
 
-  const isBaseA = tA === "base";
-  const isBaseB = tB === "base";
-
-  // base + base => tier1
   if(isBaseA && isBaseB){
     const res = T1_MAP.get(keyPair(idA,idB));
     if(!res) return null;
     return { id: res, nombre: itemName(res), tipo: itemType(res) };
   }
 
-  // tier1 + base => tier2 por regla (NO repetir)
-  // Detecto cuál es tier1 (debe estar en ORIGIN) y cuál es base
   const aIsTier1 = T1_ORIGIN.has(idA);
   const bIsTier1 = T1_ORIGIN.has(idB);
 
-  if(aIsTier1 && isBaseB){
-    return tier2Combine(idA, idB);
-  }
-  if(bIsTier1 && isBaseA){
-    return tier2Combine(idB, idA);
-  }
+  if(aIsTier1 && isBaseB) return tier2Combine(idA, idB);
+  if(bIsTier1 && isBaseA) return tier2Combine(idB, idA);
 
   return null;
 }
 
-/* =========================
-   5) Rendering / Drag & Drop
-   ========================= */
-
-const invEl = document.getElementById("inventory");
-const ogreZone = document.getElementById("ogreZone");
-const portalZone = document.getElementById("portalZone");
-const ogreStateBadge = document.getElementById("ogreStateBadge");
-const flagsLine = document.getElementById("flagsLine");
-
+/* ==== Render inventario (dos pantallas iguales) ==== */
 let dragItemId = null;
 
-function renderInventory(){
-  invEl.innerHTML = "";
+function render(){
+  document.getElementById("pillPhase").textContent = `FASE: ${state.phase.toUpperCase()}`;
+  document.getElementById("pillOgreState").textContent = `OGRO: ${state.ogre.estado_ogro ?? "—"}`;
+  document.getElementById("pillEnding").textContent = `ENDING_ID: ${state.last_final_outcome_id ?? "—"}`;
+  document.getElementById("pillPortalPhase").textContent = `FASE: ${state.phase === "portal" ? "PORTAL" : state.phase.toUpperCase()}`;
+
+  // ogro mini en portal si el ogro no murió y no estás muerto
+  const ogreMini = document.getElementById("ogreMini");
+  const ogroVive = state.phase !== "end" && state.ogre.outcome !== "jugador_muere" && state.ogre.estado_ogro && state.ogre.estado_ogro !== "muerto";
+  ogreMini.classList.toggle("hidden", !ogroVive);
+  ogreMini.textContent = ogroVive ? "OG" : "";
+
+  renderInventoryGrid("inventoryOgre");
+  renderInventoryGrid("inventoryPortal");
+}
+
+function renderInventoryGrid(containerId){
+  const el = document.getElementById(containerId);
+  el.innerHTML = "";
   for(const id of state.inventory){
-    const it = itemById(id) || { id, nombre: id, tipo:"craft" };
     const div = document.createElement("div");
     div.className = "item";
     div.draggable = true;
     div.dataset.itemId = id;
-    div.innerHTML = `
-      <div class="name">${escapeHtml(it.nombre)}</div>
-      <div class="meta">${escapeHtml(it.tipo)} · ${escapeHtml(id)}</div>
-    `;
+    div.textContent = itemName(id);
 
     div.addEventListener("dragstart", (e)=>{
       dragItemId = id;
@@ -688,7 +322,7 @@ function renderInventory(){
       clearDropHints();
     });
 
-    // Combinar: drop un item encima de este
+    // drop encima de otro item => combinar
     div.addEventListener("dragover", (e)=>{
       e.preventDefault();
       const from = dragItemId;
@@ -699,9 +333,7 @@ function renderInventory(){
       div.classList.toggle("drop-bad", !res);
       e.dataTransfer.dropEffect = res ? "move" : "none";
     });
-    div.addEventListener("dragleave", ()=>{
-      div.classList.remove("drop-ok","drop-bad");
-    });
+    div.addEventListener("dragleave", ()=> div.classList.remove("drop-ok","drop-bad"));
     div.addEventListener("drop", (e)=>{
       e.preventDefault();
       const from = e.dataTransfer.getData("text/plain");
@@ -709,142 +341,85 @@ function renderInventory(){
       if(!from || from===to) return;
       const res = combineItems(from, to);
       if(!res){
-        logCard("COMBINAR", `<p>No pasa nada entre <b>${escapeHtml(itemName(from))}</b> y <b>${escapeHtml(itemName(to))}</b>.</p>`);
+        setScrollText("ogreNarrative", `No pasa nada al combinar ${itemName(from)} con ${itemName(to)}.`);
         return;
       }
-      // Consumir from + to, producir res
       applyCombination(from, to, res);
     });
 
-    invEl.appendChild(div);
+    el.appendChild(div);
   }
-}
 
-function applyCombination(fromId, toId, res){
-  // remover ambos
-  state.inventory = state.inventory.filter(x => x !== fromId && x !== toId);
-  // asegurar que el item exista en catálogo (para nombre/tipo)
-  if(!itemById(res.id)){
-    DATA.items.push({ id: res.id, nombre: res.nombre, tipo: res.tipo || "craft" });
-  }
-  state.inventory.push(res.id);
-
-  // Logs
-  const tier = res.id.startsWith("t2__") ? "TIER 2" : "TIER 1";
-  logCard(tier, `<p><b>${escapeHtml(itemName(fromId))}</b> + <b>${escapeHtml(itemName(toId))}</b> → <b>${escapeHtml(itemName(res.id))}</b></p>`);
-  renderInventory();
-
-  // Si ya hiciste al menos una combinación, te sugiero pasar al ogro (pero no lo fuerzo)
-  if(state.phase==="combine"){
-    setPhase("ogre");
+  // si quedan menos de 4 (porque gastaste uno), relleno visual con slots vacíos (mockup)
+  while(el.children.length < 4){
+    const s = document.createElement("div");
+    s.className = "item";
+    s.style.opacity = "0.25";
+    s.style.cursor = "default";
+    s.draggable = false;
+    s.textContent = "—";
+    el.appendChild(s);
   }
 }
 
 function clearDropHints(){
-  ogreZone.classList.remove("active");
-  portalZone.classList.remove("active");
-  document.querySelectorAll(".item.drop-ok,.item.drop-bad").forEach(el=>el.classList.remove("drop-ok","drop-bad"));
+  document.querySelectorAll(".item.drop-ok,.item.drop-bad").forEach(x=>x.classList.remove("drop-ok","drop-bad"));
 }
 
-// Ogre drop
-setupZoneDrop(ogreZone, "OGRO", (itemId)=>{
-  if(state.phase !== "ogre" && state.phase !== "combine"){
-    logCard("OGRO", `<p>El ogro no acepta acciones ahora.</p>`);
-    return;
+function ensureCatalogItem(res){
+  if(!itemById(res.id)){
+    DATA.items.push({ id: res.id, nombre: res.nombre, tipo: res.tipo || "craft" });
   }
+}
+
+function applyCombination(fromId, toId, res){
+  // consumimos dos y producimos uno (mantiene máximo 4)
+  state.inventory = state.inventory.filter(x=>x!==fromId && x!==toId);
+  ensureCatalogItem(res);
+  state.inventory.push(res.id);
+
+  // si todavía estás en combine, te dejo seguir combinando pero ya habilitás ogro
+  state.phase = "ogre";
+  setScrollText("ogreNarrative", `${itemName(fromId)} + ${itemName(toId)} → ${itemName(res.id)}.`);
+  render();
+}
+
+/* ==== Dropzones OGRO / PORTAL ==== */
+function setupDropZone(el, onDrop){
+  el.addEventListener("dragover", (e)=>{ e.preventDefault(); e.dataTransfer.dropEffect="move"; });
+  el.addEventListener("drop", (e)=>{
+    e.preventDefault();
+    const id = e.dataTransfer.getData("text/plain");
+    if(!id) return;
+    onDrop(id);
+  });
+}
+
+setupDropZone(document.getElementById("ogreZone"), (itemId)=>{
+  if(state.phase !== "combine" && state.phase !== "ogre") return;
   useOnOgre(itemId);
 });
 
-// Portal drop
-setupZoneDrop(portalZone, "PORTAL", (itemId)=>{
-  if(state.phase !== "portal"){
-    logCard("PORTAL", `<p>Todavía no. Primero resolvé lo del ogro.</p>`);
-    return;
-  }
+setupDropZone(document.getElementById("portalZone"), (itemId)=>{
+  if(state.phase !== "portal") return;
   useOnPortal(itemId);
 });
 
-function setupZoneDrop(zoneEl, label, onDropItem){
-  zoneEl.addEventListener("dragover", (e)=>{
-    e.preventDefault();
-    zoneEl.classList.add("active");
-    e.dataTransfer.dropEffect = "move";
-  });
-  zoneEl.addEventListener("dragleave", ()=>{
-    zoneEl.classList.remove("active");
-  });
-  zoneEl.addEventListener("drop", (e)=>{
-    e.preventDefault();
-    zoneEl.classList.remove("active");
-    const id = e.dataTransfer.getData("text/plain");
-    if(!id) return;
-    onDropItem(id);
-  });
-}
-
 function removeFromInventory(itemId){
   state.inventory = state.inventory.filter(x=>x!==itemId);
-  renderInventory();
 }
-
-/* =========================
-   6) Ogre / Portal outcomes
-   ========================= */
 
 function parseFlags(flagsStr){
   if(!flagsStr) return [];
   return flagsStr.split(",").map(s=>s.trim()).filter(Boolean);
 }
 
-function updateOgreUI(){
-  const s = state.ogre.estado_ogro ?? "(sin definir)";
-  ogreStateBadge.textContent = `Ogro: ${s}`;
-  const flags = [...state.ogre.flags];
-  flagsLine.textContent = flags.length ? `Flags: ${flags.join(", ")}` : "Flags: —";
+function setScrollText(id, html){
+  document.getElementById(id).innerHTML = html;
 }
 
-function useOnOgre(itemId){
-  // consumir item
-  removeFromInventory(itemId);
-
-  // buscar outcome específico
-  const row = DATA.ogro.find(x => x.item === itemId);
-  if(row){
-    const flags = parseFlags(row.flags_set);
-    flags.forEach(f => state.ogre.flags.add(f));
-
-    state.ogre.outcome = row.outcome;
-    state.ogre.estado_ogro = row.estado_ogro;
-
-    logCard("OGRO", `<p><b>${escapeHtml(itemName(itemId))}</b></p><p>${row.texto}</p>`);
-  } else {
-    // fallback genérico
-    state.ogre.outcome = "neutral";
-    state.ogre.estado_ogro = "confundido";
-    logCard("OGRO", `<p>Usás <b>${escapeHtml(itemName(itemId))}</b> con el ogro. El ogro… procesa la información como puede.</p>`);
-  }
-
-  updateOgreUI();
-
-  // resolver fase según outcome
-  if(state.ogre.outcome === "jugador_muere"){
-    setPhase("end");
-    document.getElementById("stateLine").textContent = "Has muerto";
-    document.getElementById("stateLine").className = "state bad";
-    document.getElementById("stateHelp").textContent = "Fin. Probá otra combinación.";
-    logCard("FIN", `<p><b>HAS MUERTO</b></p>`);
-    return;
-  }
-
-  // si sobrevivís, portal habilitado
-  setPhase("portal");
-  document.getElementById("ogreHint2").textContent = `Resultado: ${state.ogre.estado_ogro}`;
-  document.getElementById("portalHint2").textContent = `Arrastrá un objeto para finalizar (idealmente el sobrante).`;
-  logCard("ESTADO", `<p><b>Estado del ogro:</b> ${escapeHtml(state.ogre.estado_ogro || "—")}</p>`);
-}
-
+/* ==== OGRO / PORTAL con outcome_id único ==== */
 function conditionsMatch(cond){
-  // cond: {estado_ogro?:string, flags_all?:string[]}
   if(!cond) return true;
   if(cond.estado_ogro && cond.estado_ogro !== state.ogre.estado_ogro) return false;
   if(cond.flags_all){
@@ -855,22 +430,49 @@ function conditionsMatch(cond){
   return true;
 }
 
+function useOnOgre(itemId){
+  removeFromInventory(itemId);
+
+  const row = DATA.ogro.find(x => x.item === itemId);
+  if(row){
+    parseFlags(row.flags_set).forEach(f=>state.ogre.flags.add(f));
+    state.ogre.outcome = row.outcome;
+    state.ogre.outcome_id = row.outcome_id || null;
+    state.ogre.estado_ogro = row.estado_ogro || "vivo";
+    setScrollText("ogreNarrative", row.texto || `Usás ${itemName(itemId)} con el ogro.`);
+  } else {
+    state.ogre.outcome = "neutral";
+    state.ogre.outcome_id = `ogro__${itemId}__neutral`;
+    state.ogre.estado_ogro = "confundido";
+    setScrollText("ogreNarrative", `Usás ${itemName(itemId)} con el ogro. El ogro… no sabe qué opinar.`);
+  }
+
+  if(state.ogre.outcome === "jugador_muere"){
+    state.phase = "end";
+    setScrollText("portalNarrative", "Has muerto. No hay portal para vos.");
+    state.last_final_outcome_id = state.ogre.outcome_id; // queda como ending del run
+    render();
+    return;
+  }
+
+  // sobreviviste => portal
+  state.phase = "portal";
+  setScrollText("portalNarrative", "Ahora: tirá el objeto restante al portal.");
+  render();
+}
+
 function useOnPortal(itemId){
   removeFromInventory(itemId);
 
-  // elegir outcome más específico:
-  // 1) los que matchean flags_all (si existen)
-  // 2) los que matchean estado_ogro
-  // 3) fallback por item sin condiciones
   const rows = DATA.portal.filter(x => x.item === itemId);
 
-  // ordenar por especificidad
+  // más específico primero (flags_all > estado_ogro > genérico)
   const scored = rows.map(r=>{
-    const c = r.condiciones || {};
+    const c = r.condiciones || null;
     let score = 0;
-    if(c.flags_all?.length) score += 10 + c.flags_all.length;
-    if(c.estado_ogro) score += 5;
-    return { r, score };
+    if(c?.flags_all?.length) score += 10 + c.flags_all.length;
+    if(c?.estado_ogro) score += 5;
+    return {r, score};
   }).sort((a,b)=>b.score-a.score);
 
   let picked = null;
@@ -878,174 +480,130 @@ function useOnPortal(itemId){
     if(conditionsMatch(r.condiciones)) { picked = r; break; }
   }
   if(!picked){
+    // fallback por item sin condiciones si existe
     picked = rows.find(r=>!r.condiciones) || null;
   }
 
   if(picked){
-    logCard("PORTAL", `<p><b>${escapeHtml(itemName(itemId))}</b></p><p>${picked.texto}</p>`);
+    setScrollText("portalNarrative", picked.texto || `Cruzás el portal con ${itemName(itemId)}.`);
+    state.last_final_outcome_id = picked.outcome_id || `final__${itemId}__generico`;
   } else {
-    logCard("PORTAL", `<p>Tirás <b>${escapeHtml(itemName(itemId))}</b> al portal. El portal decide por vos. Spoiler: no es por tu bien.</p>`);
+    setScrollText("portalNarrative", `Tirás ${itemName(itemId)} al portal. El portal decide por vos.`);
+    state.last_final_outcome_id = `final__${itemId}__portal_decide`;
   }
 
-  setPhase("end");
+  state.phase = "end";
+  render();
 }
 
-/* =========================
-   7) CSV Loader
-   ========================= */
+/* ==== CSV loader (compatible con tu game_data.csv) ==== */
 function parseCSV(text){
-  // CSV simple con comillas. No es perfecto, pero sirve para nuestro uso.
   const rows = [];
   let i=0, field="", row=[], inQuotes=false;
-
-  function pushField(){
-    row.push(field);
-    field="";
-  }
-  function pushRow(){
-    if(row.length>0 && row.some(x=>x.trim()!=="")) rows.push(row);
-    row=[];
-  }
+  const pushField=()=>{ row.push(field); field=""; };
+  const pushRow=()=>{ if(row.length && row.some(x=>x.trim()!=="")) rows.push(row); row=[]; };
 
   while(i<text.length){
-    const ch = text[i];
+    const ch=text[i];
     if(inQuotes){
       if(ch === '"'){
         if(text[i+1] === '"'){ field+='"'; i+=2; continue; }
         inQuotes=false; i++; continue;
       }
-      field += ch; i++; continue;
+      field+=ch; i++; continue;
     } else {
       if(ch === '"'){ inQuotes=true; i++; continue; }
       if(ch === ','){ pushField(); i++; continue; }
       if(ch === '\n'){ pushField(); pushRow(); i++; continue; }
       if(ch === '\r'){ i++; continue; }
-      field += ch; i++; continue;
+      field+=ch; i++; continue;
     }
   }
   pushField(); pushRow();
   return rows;
 }
-
 function rowsToObjects(rows){
-  const [header, ...data] = rows;
-  const keys = header.map(h=>h.trim());
+  const [header,...data]=rows;
+  const keys=header.map(h=>h.trim());
   return data.map(r=>{
-    const obj = {};
-    keys.forEach((k, idx)=> obj[k] = (r[idx] ?? "").trim());
-    return obj;
+    const o={};
+    keys.forEach((k,idx)=>o[k]=(r[idx]??"").trim());
+    return o;
   });
 }
 
 async function loadCSV(){
   try{
-    const res = await fetch(CSV_URL, { cache: "no-store" });
-    if(!res.ok) throw new Error("no csv");
+    const res = await fetch(CSV_URL, { cache:"no-store" });
+    if(!res.ok) throw new Error("csv not found");
     const text = await res.text();
-    const rows = parseCSV(text);
-    const objs = rowsToObjects(rows);
+    const objs = rowsToObjects(parseCSV(text));
 
-    // reset data
-    DATA = { items: [], recetas_t1: [], ogro: [], portal: [] };
+    DATA = { items:[], recetas_t1:[], ogro:[], portal:[] };
 
     for(const o of objs){
-      const tabla = o.tabla;
-      if(!tabla) continue;
-
-      if(tabla === "items"){
-        DATA.items.push({ id:o.id, nombre:o.nombre, tipo:o.tipo || "base" });
+      const t=o.tabla;
+      if(t==="items"){
+        DATA.items.push({ id:o.id, nombre:o.nombre, tipo:o.tipo||"base" });
       }
-      if(tabla === "recetas_t1"){
+      if(t==="recetas_t1"){
         DATA.recetas_t1.push({ a:o.a, b:o.b, result:o.result });
       }
-      if(tabla === "ogro"){
+      if(t==="ogro"){
         DATA.ogro.push({
           item:o.item,
           outcome:o.outcome,
+          outcome_id:o.outcome_id,
           estado_ogro:o.estado_ogro,
           flags_set:o.flags_set,
-          texto:o.texto || ""
+          texto:o.texto
         });
       }
-      if(tabla === "portal"){
-        let condiciones = null;
+      if(t==="portal"){
+        let condiciones=null;
         if(o.condiciones){
-          try{ condiciones = JSON.parse(o.condiciones); } catch { condiciones = null; }
+          try{ condiciones=JSON.parse(o.condiciones); } catch { condiciones=null; }
         }
         DATA.portal.push({
           item:o.item,
-          condiciones,
           outcome:o.outcome,
-          texto:o.texto || ""
+          outcome_id:o.outcome_id,
+          condiciones,
+          texto:o.texto
         });
       }
     }
 
-
-    // rebuild tier1 maps
     rebuildTier1Maps();
-    document.getElementById("poolBadge").textContent = `Pool: ${DATA.items.filter(x=>x.tipo==="base").length}`;
-
-    logCard("DATOS", `<p>CSV cargado OK (<b>${escapeHtml(CSV_URL)}</b>).</p>`);
     newRun();
-  } catch(err){
+    setScrollText("ogreNarrative", `CSV cargado OK. items=${DATA.items.length}, t1=${DATA.recetas_t1.length}, ogro=${DATA.ogro.length}, portal=${DATA.portal.length}`);
+  } catch(e){
     DATA = structuredClone(FALLBACK_DATA);
     rebuildTier1Maps();
-    document.getElementById("poolBadge").textContent = `Pool: ${DATA.items.filter(x=>x.tipo==="base").length}`;
-    logCard("DATOS", `<p>No encontré <b>${escapeHtml(CSV_URL)}</b>. Uso fallback embebido.</p>`);
     newRun();
-
+    setScrollText("ogreNarrative", `No pude cargar ${CSV_URL}. Usando fallback.`);
   }
 }
 
-/* =========================
-   8) Run / Init
-   ========================= */
-
-function resetState(){
-  state.phase = "combine";
-  state.inventory = [];
-  state.ogre.outcome = null;
-  state.ogre.estado_ogro = null;
-  state.ogre.flags = new Set();
-  updateOgreUI();
-  document.getElementById("ogreHint2").textContent = "";
-  document.getElementById("portalHint2").textContent = "";
-  document.getElementById("log").innerHTML = "";
-}
-
 function newRun(){
-  resetState();
+  state.phase="combine";
+  state.ogre = { outcome:null, outcome_id:null, estado_ogro:null, flags:new Set() };
+  state.last_final_outcome_id = null;
 
+  // 4 objetos random del pool base
   const basePool = DATA.items.filter(x=>x.tipo==="base").map(x=>x.id);
-  const start = pickDistinct(basePool, 4);
-  state.inventory = start;
+  state.inventory = pickDistinct(basePool, 4);
 
-  renderInventory();
-  setPhase("combine");
-
-  logCard("INICIO", `<p>Objetos iniciales: <b>${start.map(itemName).map(escapeHtml).join("</b>, <b>")}</b></p>`);
-  logCard("REGLAS", `<p>• Arrastrá un objeto sobre otro para combinar (Tier 1 o Tier 2).<br>
-  • Tier 2: (resultado Tier 1) + (base que no fue usada para crearlo).<br>
-  • Usá un objeto con el ogro, luego uno con el portal.</p>`);
+  setScrollText("ogreNarrative", "Arrastrá y combiná. O usá un objeto con el OGRO.");
+  setScrollText("portalNarrative", "Después del ogro, tirá el objeto restante al PORTAL.");
+  render();
 }
 
-function escapeHtml(s){
-  return String(s)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
+/* ==== UI buttons ==== */
 document.getElementById("btnNewRun").addEventListener("click", newRun);
 document.getElementById("btnReloadData").addEventListener("click", loadCSV);
 
-// Init: intentar CSV, si no fallback.
 loadCSV();
-  logCard("DATOS", `<p>CSV cargado OK (<b>${escapeHtml(CSV_URL)}</b>)</p>
-<p>items: <b>${DATA.items.length}</b> · recetas_t1: <b>${DATA.recetas_t1.length}</b> · ogro: <b>${DATA.ogro.length}</b> · portal: <b>${DATA.portal.length}</b></p>`);
 </script>
 </body>
 </html>
