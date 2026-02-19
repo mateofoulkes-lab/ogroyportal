@@ -981,6 +981,7 @@ async function loadCSV(){
       }
     }
 
+
     // rebuild tier1 maps
     rebuildTier1Maps();
     document.getElementById("poolBadge").textContent = `Pool: ${DATA.items.filter(x=>x.tipo==="base").length}`;
@@ -993,6 +994,7 @@ async function loadCSV(){
     document.getElementById("poolBadge").textContent = `Pool: ${DATA.items.filter(x=>x.tipo==="base").length}`;
     logCard("DATOS", `<p>No encontré <b>${escapeHtml(CSV_URL)}</b>. Uso fallback embebido.</p>`);
     newRun();
+
   }
 }
 
@@ -1042,6 +1044,8 @@ document.getElementById("btnReloadData").addEventListener("click", loadCSV);
 
 // Init: intentar CSV, si no fallback.
 loadCSV();
+  logCard("DATOS", `<p>CSV cargado OK (<b>${escapeHtml(CSV_URL)}</b>)</p>
+<p>items: <b>${DATA.items.length}</b> · recetas_t1: <b>${DATA.recetas_t1.length}</b> · ogro: <b>${DATA.ogro.length}</b> · portal: <b>${DATA.portal.length}</b></p>`);
 </script>
 </body>
 </html>
