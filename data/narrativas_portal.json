@@ -1,0 +1,149 @@
+[
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 2,
+    "con_ogro": false,
+    "narrativa": "Te tirás al portal con agua. Caés en un mundo acuático.\n\nIntentás nadar solo. A los pocos minutos te das cuenta de que el orgullo no flota. Morís cansado.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 2,
+    "con_ogro": true,
+    "narrativa": "Con el ogro a tu lado, el mundo acuático se vuelve turismo.\n\nTe subís a sus hombros y él nada como lancha. Llegan a una isla con sirenas y tritones.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 3,
+    "con_ogro": false,
+    "narrativa": "El portal responde al fuego con un mundo de brasas.\n\nSin ogro, te prendés fuego por razones obvias. Morís muy caliente, pero no en el buen sentido.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 3,
+    "con_ogro": true,
+    "narrativa": "El ogro te cubre con su pellejo grueso y te lleva por un paisaje de ceniza.\n\nLlegan a una forja viviente que les ofrece trabajo y gloria dudosa.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 1,
+    "con_ogro": false,
+    "narrativa": "El portal te escupe en un mercado marino interdimensional.\n\nSolo, te estafan con una “perla auténtica” que era un garbanzo. Te deprimís. Fin triste.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 1,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, nadie te estafa.\n\nEl ogro regatea a los gritos, ganan provisiones y terminan invitados a un banquete submarino.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 4,
+    "con_ogro": false,
+    "narrativa": "El portal te lleva a un bosque que juzga a los intrusos.\n\nSolo, los árboles te expulsan como a una astilla. Volás, caés, morís.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 4,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, el bosque se calma.\n\nEl ogro habla con los troncos (no preguntes) y consiguen una cabaña segura.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 5,
+    "con_ogro": false,
+    "narrativa": "Entrás a una biblioteca arcana que exige credenciales.\n\nSolo, te confunden con un libro y te archivan. Morís catalogado.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 5,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, la biblioteca se intimida.\n\nTe dan un pase VIP: “Hechicero y su seguridad”. Salís con libros prohibidos.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 6,
+    "con_ogro": false,
+    "narrativa": "El mundo mineral te recibe con gravedad seria.\n\nSolo, te convertís en estatua por aburrimiento cósmico. Fin.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 6,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, escalás montañas imposibles.\n\nEn la cima, una roca parlante les da un mapa de tesoro.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 7,
+    "con_ogro": false,
+    "narrativa": "Caés en una ciudad vertical sin escaleras.\n\nSolo, te quedás colgando de tu ego. Eventualmente caés. Morís.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 7,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, los nudos salen perfectos.\n\nSuben como profesionales y terminan dueños de un puente colgante legendario.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 8,
+    "con_ogro": false,
+    "narrativa": "Entrás al mundo del reflejo.\n\nSolo, tu reflejo te acusa de todo. Te deprimís hasta evaporarte. Fin.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": null,
+    "id_item_portal": 8,
+    "con_ogro": true,
+    "narrativa": "Con el ogro, el reflejo se calla.\n\nTe coronan “Señor del Reflejo” por venir con un guardaespaldas intimidante.",
+    "id_badge": null
+  },
+  {
+    "id_item_ogro": 12,
+    "id_item_portal": 2,
+    "con_ogro": true,
+    "narrativa": "Con el ogro convertido en pez gigante, el mundo acuático es tu pista.\n\nTe montás sobre él y los tritones te tratan como rey por llegar en un “pez-ogro” sagrado.",
+    "id_badge": 3
+  },
+  {
+    "id_item_ogro": 10,
+    "id_item_portal": 2,
+    "con_ogro": true,
+    "narrativa": "El ogro recuerda el pescado asado y entra al océano como campeón.\n\nSirenas y tritones les abren paso y te nombran “Invitado de Honor”.",
+    "id_badge": 2
+  },
+  {
+    "id_item_ogro": 61,
+    "id_item_portal": 8,
+    "con_ogro": true,
+    "narrativa": "Como ya tenías un portal de bolsillo, el mundo del reflejo te reconoce como colega.\n\nTu reflejo firma un tratado. Nadie muere. Milagro.",
+    "id_badge": 4
+  },
+  {
+    "id_item_ogro": 62,
+    "id_item_portal": 5,
+    "con_ogro": true,
+    "narrativa": "La biblioteca arcana siente el olor a banquete infinito.\n\nTe reciben como celebridad gastronómica mágica. Te vas con recetas prohibidas.",
+    "id_badge": 5
+  },
+  {
+    "id_item_ogro": 79,
+    "id_item_portal": 6,
+    "con_ogro": true,
+    "narrativa": "El mundo mineral vibra cuando llegás con el martillo sagrado.\n\nTe nombran Maestro de Forja. Te regalan una roca que canta cuando la mirás.",
+    "id_badge": 6
+  }
+]
