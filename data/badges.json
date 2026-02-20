@@ -1,0 +1,26 @@
+[
+  {
+    "id_badge": 1,
+    "descripcion": "CABALGATA ACUÁTICA: cruzaste al mundo acuático con tu ogro amigo."
+  },
+  {
+    "id_badge": 2,
+    "descripcion": "SIRENAS DIPLOMÁTICAS: te presentaron ante sirenas y tritones como invitado de honor."
+  },
+  {
+    "id_badge": 3,
+    "descripcion": "PEZ GIGANTE: llevaste al ogro convertido en pez al reino de los tritones."
+  },
+  {
+    "id_badge": 4,
+    "descripcion": "PORTAL DE BOLSILLO: sobreviviste obteniendo un portal portátil."
+  },
+  {
+    "id_badge": 5,
+    "descripcion": "BANQUETE INFINITO: alimentaste al ogro con magia gastronómica."
+  },
+  {
+    "id_badge": 6,
+    "descripcion": "MARTILLO SAGRADO: fuiste proclamado 'Herrero del Destino'."
+  }
+]
