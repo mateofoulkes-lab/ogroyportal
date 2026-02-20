@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pescado"
+  },
+  {
+    "id": 2,
+    "nombre": "Agua"
+  },
+  {
+    "id": 3,
+    "nombre": "Fuego"
+  },
+  {
+    "id": 4,
+    "nombre": "Palo"
+  },
+  {
+    "id": 5,
+    "nombre": "Magia"
+  },
+  {
+    "id": 6,
+    "nombre": "Piedra"
+  },
+  {
+    "id": 7,
+    "nombre": "Cuerda"
+  },
+  {
+    "id": 8,
+    "nombre": "Espejo"
+  },
+  {
+    "id": 9,
+    "nombre": "Pescado mojado"
+  },
+  {
+    "id": 10,
+    "nombre": "Pescado asado"
+  },
+  {
+    "id": 11,
+    "nombre": "Pescado ensartado"
+  },
+  {
+    "id": 12,
+    "nombre": "Hechizo: convertir en pez"
+  },
+  {
+    "id": 13,
+    "nombre": "Pescado aplastado"
+  },
+  {
+    "id": 14,
+    "nombre": "Pescado atado"
+  },
+  {
+    "id": 15,
+    "nombre": "Pescado vanidoso"
+  },
+  {
+    "id": 16,
+    "nombre": "Vapor"
+  },
+  {
+    "id": 17,
+    "nombre": "Palo mojado"
+  },
+  {
+    "id": 18,
+    "nombre": "Hechizo: invocar marea"
+  },
+  {
+    "id": 19,
+    "nombre": "Barro"
+  },
+  {
+    "id": 20,
+    "nombre": "Cuerda empapada"
+  },
+  {
+    "id": 21,
+    "nombre": "Espejo empañado"
+  },
+  {
+    "id": 22,
+    "nombre": "Antorcha"
+  },
+  {
+    "id": 23,
+    "nombre": "Hechizo: llama azul"
+  },
+  {
+    "id": 24,
+    "nombre": "Piedra caliente"
+  },
+  {
+    "id": 25,
+    "nombre": "Cuerda quemada"
+  },
+  {
+    "id": 26,
+    "nombre": "Rayo solar"
+  },
+  {
+    "id": 27,
+    "nombre": "Varita mágica"
+  },
+  {
+    "id": 28,
+    "nombre": "Garrote"
+  },
+  {
+    "id": 29,
+    "nombre": "Lazo"
+  },
+  {
+    "id": 30,
+    "nombre": "Periscopio"
+  },
+  {
+    "id": 31,
+    "nombre": "Piedra filosofal"
+  },
+  {
+    "id": 32,
+    "nombre": "Cuerda encantada"
+  },
+  {
+    "id": 33,
+    "nombre": "Espejo encantado"
+  },
+  {
+    "id": 34,
+    "nombre": "Boleadora"
+  },
+  {
+    "id": 35,
+    "nombre": "Espejo roto"
+  },
+  {
+    "id": 36,
+    "nombre": "Trampa de reflejo"
+  },
+  {
+    "id": 37,
+    "nombre": "Niebla"
+  },
+  {
+    "id": 38,
+    "nombre": "Ladrillo"
+  },
+  {
+    "id": 39,
+    "nombre": "Antorcha atada"
+  },
+  {
+    "id": 40,
+    "nombre": "Lanzantorchas"
+  },
+  {
+    "id": 41,
+    "nombre": "Lanzallamas"
+  },
+  {
+    "id": 42,
+    "nombre": "Mangual"
+  },
+  {
+    "id": 43,
+    "nombre": "Ancla"
+  },
+  {
+    "id": 44,
+    "nombre": "Ojo que todo lo ve"
+  },
+  {
+    "id": 45,
+    "nombre": "Espejo de agua"
+  },
+  {
+    "id": 46,
+    "nombre": "Espejo ardiente"
+  },
+  {
+    "id": 47,
+    "nombre": "Cuerda serpiente"
+  },
+  {
+    "id": 48,
+    "nombre": "Prisión de vidrio"
+  },
+  {
+    "id": 49,
+    "nombre": "Hechizo: lluvia"
+  },
+  {
+    "id": 50,
+    "nombre": "Hechizo: bola de fuego"
+  },
+  {
+    "id": 51,
+    "nombre": "Hechizo: piel de piedra"
+  },
+  {
+    "id": 52,
+    "nombre": "Lingote de oro"
+  },
+  {
+    "id": 53,
+    "nombre": "Oro líquido"
+  },
+  {
+    "id": 54,
+    "nombre": "Hechizo: transmutar"
+  },
+  {
+    "id": 55,
+    "nombre": "Boleadora larga"
+  },
+  {
+    "id": 56,
+    "nombre": "Boleadora telequinética"
+  },
+  {
+    "id": 57,
+    "nombre": "Gólem de barro"
+  },
+  {
+    "id": 58,
+    "nombre": "Niebla encantada"
+  },
+  {
+    "id": 59,
+    "nombre": "Sauna portátil"
+  },
+  {
+    "id": 60,
+    "nombre": "Espejo mosaico"
+  },
+  {
+    "id": 61,
+    "nombre": "Portal de bolsillo"
+  },
+  {
+    "id": 62,
+    "nombre": "Hechizo: banquete infinito"
+  },
+  {
+    "id": 63,
+    "nombre": "Brocheta flambeada"
+  },
+  {
+    "id": 64,
+    "nombre": "Caña de pescar"
+  },
+  {
+    "id": 65,
+    "nombre": "Anzuelo de suerte"
+  },
+  {
+    "id": 66,
+    "nombre": "Máscara de pez"
+  },
+  {
+    "id": 67,
+    "nombre": "Electricidad estática"
+  },
+  {
+    "id": 68,
+    "nombre": "Anguila eléctrica"
+  },
+  {
+    "id": 69,
+    "nombre": "Tormenta en frasco"
+  },
+  {
+    "id": 70,
+    "nombre": "Pararrayos portátil"
+  },
+  {
+    "id": 71,
+    "nombre": "Hechizo: choque"
+  },
+  {
+    "id": 72,
+    "nombre": "Sirena en el espejo"
+  },
+  {
+    "id": 73,
+    "nombre": "Canto prohibido"
+  },
+  {
+    "id": 74,
+    "nombre": "Serpiente cebada"
+  },
+  {
+    "id": 75,
+    "nombre": "Dragón de bolsillo"
+  },
+  {
+    "id": 76,
+    "nombre": "Cárcel inamovible"
+  },
+  {
+    "id": 77,
+    "nombre": "Hechizo: sentencia"
+  },
+  {
+    "id": 78,
+    "nombre": "Martillo"
+  },
+  {
+    "id": 79,
+    "nombre": "Martillo sagrado"
+  },
+  {
+    "id": 80,
+    "nombre": "Máscara de barro"
+  },
+  {
+    "id": 81,
+    "nombre": "Rostro falso"
+  },
+  {
+    "id": 82,
+    "nombre": "Manto invisible"
+  },
+  {
+    "id": 83,
+    "nombre": "Capa con capucha"
+  },
+  {
+    "id": 84,
+    "nombre": "Espejo dorado"
+  },
+  {
+    "id": 85,
+    "nombre": "Espejo que miente"
+  }
+]
