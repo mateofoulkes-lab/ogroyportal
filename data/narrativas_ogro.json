@@ -1,0 +1,512 @@
+[
+  {
+    "id_item": 1,
+    "narrativa": "Le das el pescado al ogro. Lo huele como si estuviera evaluando un queso raro.\n\nLo prueba, hace una mueca de traición y te liquida con una palmada que te manda a conocer a tus antepasados.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 2,
+    "narrativa": "Le ofrecés agua al ogro. Se queda quieto, confundido por el gesto civilizado.\n\nSe la toma toda de una. Te mira con respeto. “Bien… sos de los míos”, gruñe. Amistad sellada por hidratación.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 3,
+    "narrativa": "Invocás fuego. El ogro no entiende el concepto de “margen de seguridad”.\n\nLo prendés fuego y corre en círculos como si eso ayudara. Termina derrotado. Te queda olor a chamuscado en el alma.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 4,
+    "narrativa": "Le acercás un palo al ogro como si fuera un premio.\n\nÉl lo interpreta como un desafío de duelo formal. Te gana en 0,3 segundos. Moriste con un palo en la mano y dignidad dudosa.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 5,
+    "narrativa": "Mostrás magia. El ogro abre grande los ojos, como nene frente a un truco barato.\n\nAplaude. No entiende nada pero le encanta. Decide que sos divertido y te adopta como “hechicero oficial”.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 6,
+    "narrativa": "Le tirás una piedra. El ogro la atrapa en el aire.\n\nSe ofende con profesionalismo y te devuelve la piedra con intereses. Fin de tu aventura y de tus dientes.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 7,
+    "narrativa": "Le mostrás una cuerda. El ogro la agarra y hace un nudo imposible sin mirar.\n\nTe enseña orgulloso su “nudo de ogro”. Ahora sos su alumno. Eso, en su cultura, es amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 8,
+    "narrativa": "Le acercás un espejo. El ogro se ve… y se queda congelado.\n\nSe acomoda un mechón inexistente, sonríe y decide que sos buena gente por mostrarle “su mejor perfil”.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 9,
+    "narrativa": "Usás Pescado mojado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 10,
+    "narrativa": "Le das pescado asado al ogro. Se detiene, olfatea, y el mundo aguanta la respiración.\n\nLo devora feliz. Te pega una palmada amistosa (sobrevivís). “Vos cocinar, vos amigo”, declara.",
+    "estado": "amistad",
+    "id_badge": 1
+  },
+  {
+    "id_item": 11,
+    "narrativa": "Usás Pescado ensartado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 12,
+    "narrativa": "Pronunciás el hechizo con voz solemne y un poquito de miedo.\n\nBLUP. El ogro se convierte en un pez gigante con cara de ogro. Te mira igual que antes… pero ahora hace burbujas amistosas.",
+    "estado": "amistad",
+    "id_badge": 3
+  },
+  {
+    "id_item": 13,
+    "narrativa": "Usás Pescado aplastado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 14,
+    "narrativa": "Usás Pescado atado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 15,
+    "narrativa": "Usás Pescado vanidoso con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 16,
+    "narrativa": "Usás Vapor con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 17,
+    "narrativa": "Usás Palo mojado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 18,
+    "narrativa": "Usás Hechizo: invocar marea con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 19,
+    "narrativa": "Usás Barro con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 20,
+    "narrativa": "Usás Cuerda empapada con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 21,
+    "narrativa": "Usás Espejo empañado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 22,
+    "narrativa": "Usás Antorcha con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 23,
+    "narrativa": "Usás Hechizo: llama azul con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 24,
+    "narrativa": "Usás Piedra caliente con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 25,
+    "narrativa": "Usás Cuerda quemada con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 26,
+    "narrativa": "Usás Rayo solar con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 27,
+    "narrativa": "Usás Varita mágica con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 28,
+    "narrativa": "Usás Garrote con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 29,
+    "narrativa": "Usás Lazo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 30,
+    "narrativa": "Usás Periscopio con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 31,
+    "narrativa": "Usás Piedra filosofal con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 32,
+    "narrativa": "Usás Cuerda encantada con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 33,
+    "narrativa": "Usás Espejo encantado con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 34,
+    "narrativa": "Usás Boleadora con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 35,
+    "narrativa": "Usás Espejo roto con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 36,
+    "narrativa": "Usás Trampa de reflejo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 37,
+    "narrativa": "Usás Niebla con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 38,
+    "narrativa": "Usás Ladrillo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 39,
+    "narrativa": "Usás Antorcha atada con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 40,
+    "narrativa": "Usás Lanzantorchas con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 41,
+    "narrativa": "Apuntás el lanzallamas. El ogro entiende inmediatamente el concepto de “mala decisión”.\n\nNo hay pelea. Hay un final. Ganaste. Y el portal te mira con respeto.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 42,
+    "narrativa": "Usás Mangual con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 43,
+    "narrativa": "Usás Ancla con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 44,
+    "narrativa": "Usás Ojo que todo lo ve con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 45,
+    "narrativa": "Usás Espejo de agua con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 46,
+    "narrativa": "Usás Espejo ardiente con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 47,
+    "narrativa": "Usás Cuerda serpiente con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 48,
+    "narrativa": "Usás Prisión de vidrio con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 49,
+    "narrativa": "Usás Hechizo: lluvia con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 50,
+    "narrativa": "Usás Hechizo: bola de fuego con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 51,
+    "narrativa": "Usás Hechizo: piel de piedra con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 52,
+    "narrativa": "Usás Lingote de oro con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 53,
+    "narrativa": "Usás Oro líquido con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 54,
+    "narrativa": "Usás Hechizo: transmutar con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 55,
+    "narrativa": "Usás Boleadora larga con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 56,
+    "narrativa": "Usás Boleadora telequinética con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 57,
+    "narrativa": "Usás Gólem de barro con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 58,
+    "narrativa": "Usás Niebla encantada con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 59,
+    "narrativa": "Usás Sauna portátil con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 60,
+    "narrativa": "Usás Espejo mosaico con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 61,
+    "narrativa": "Le mostrás un portal de bolsillo. El ogro mete y saca el dedo como si fuera gelatina cósmica.\n\nSe divierte. Te deja vivir porque “esto está buenísimo”. Amistad por ciencia aplicada.",
+    "estado": "amistad",
+    "id_badge": 4
+  },
+  {
+    "id_item": 62,
+    "narrativa": "Hacés aparecer una mesa imposible: olores, vapor, y un festín que no termina.\n\nEl ogro come, llora una lágrima y te declara su mejor amigo. La gastronomía hizo lo que la diplomacia nunca pudo.",
+    "estado": "amistad",
+    "id_badge": 5
+  },
+  {
+    "id_item": 63,
+    "narrativa": "Usás Brocheta flambeada con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 64,
+    "narrativa": "Usás Caña de pescar con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 65,
+    "narrativa": "Usás Anzuelo de suerte con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 66,
+    "narrativa": "Usás Máscara de pez con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 67,
+    "narrativa": "Usás Electricidad estática con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 68,
+    "narrativa": "Usás Anguila eléctrica con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 69,
+    "narrativa": "Usás Tormenta en frasco con el ogro. El ogro duda si esto entra en “pelea justa”.\n\nNo entra. Termina derrotado. Ganaste por ingeniería narrativa.",
+    "estado": "victoria",
+    "id_badge": null
+  },
+  {
+    "id_item": 70,
+    "narrativa": "Usás Pararrayos portátil con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 71,
+    "narrativa": "Usás Hechizo: choque con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 72,
+    "narrativa": "Usás Sirena en el espejo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 73,
+    "narrativa": "Usás Canto prohibido con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 74,
+    "narrativa": "Usás Serpiente cebada con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 75,
+    "narrativa": "Usás Dragón de bolsillo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 76,
+    "narrativa": "Usás Cárcel inamovible con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 77,
+    "narrativa": "Usás Hechizo: sentencia con el ogro. El aire vibra con dramatismo barato.\n\nEl ogro se impresiona y decide que sos útil. Eso, en su mundo, cuenta como amistad.",
+    "estado": "amistad",
+    "id_badge": null
+  },
+  {
+    "id_item": 78,
+    "narrativa": "Usás Martillo con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 79,
+    "narrativa": "El martillo vibra con un zumbido heroico. El ogro se queda duro, como si lo hubieran retado a duelo sagrado.\n\nSe arrodilla. Te proclama “Herrero del Destino”. No sabés qué significa, pero suena a amistad con beneficios.",
+    "estado": "amistad",
+    "id_badge": 6
+  },
+  {
+    "id_item": 80,
+    "narrativa": "Usás Máscara de barro con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 81,
+    "narrativa": "Usás Rostro falso con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 82,
+    "narrativa": "Usás Manto invisible con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 83,
+    "narrativa": "Usás Capa con capucha con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 84,
+    "narrativa": "Usás Espejo dorado con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  },
+  {
+    "id_item": 85,
+    "narrativa": "Usás Espejo que miente con el ogro. El ogro lo interpreta como una provocación artística.\n\nDecide que no está para arte contemporáneo y te mata. Fin.",
+    "estado": "derrota",
+    "id_badge": null
+  }
+]
